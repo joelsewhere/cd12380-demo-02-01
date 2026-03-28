@@ -17,14 +17,14 @@ default_args = {
     }
 
 @dag(
+    schedule="0 * * * *",   # @hourly
+    start_date=_five_hours_ago(),
+    default_args=default_args,
+    doc_md=(Path(__file__).parent / 'README.md').as_posix(),
     description=(
         "Demonstrates catchup, intentional N-3 failure, clearing tasks, "
         "and backfilling historical runs with a date filter."
     ),
-  schedule="0 * * * *",   # @hourly
-  start_date=_five_hours_ago(),
-  default_args=default_args,
-  doc_md=(Path(__file__).parent / 'README.md').as_posix(),
   )
 def airflow_schedules():
 
