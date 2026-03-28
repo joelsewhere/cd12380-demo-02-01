@@ -15,8 +15,8 @@ Steps
 Schedule
 --------
 - @hourly  (cron: "0 * * * *")
-- start_date: 5 hours before the current UTC hour  →  Airflow will
-- immediately create 5 queued/running catchup runs when the DAG is unpaused.
+- start_date: 5 hours before the current UTC hour
+- Airflow immediately create 5 queued/running catchup runs when the DAG is unpaused and catchup=True
 
 
 Demonstrated Airflow Patterns
